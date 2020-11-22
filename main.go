@@ -54,18 +54,18 @@ func getDB() (*sqlx.DB, error) {
 }
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	menu := Menu{}
-	dbx, err := getDB()
-	if err != nil {
-		log.Fatalf("failed to connect to DB: %s.", err.Error())
-	}
-	menuId := 1
-	err = dbx.Get(&menu,"SELECT * FROM `menus` WHERE `id` = ?", menuId)
-	if err != nil {
-		log.Fatalf("failed to connect to DB: %s.", err.Error())
-	}
+	//menu := Menu{}
+	//dbx, err := getDB()
+	//if err != nil {
+	//	log.Fatalf("failed to connect to DB: %s.", err.Error())
+	//}
+	//menuId := 1
+	//err = dbx.Get(&menu,"SELECT * FROM `menus` WHERE `id` = ?", menuId)
+	//if err != nil {
+	//	log.Fatalf("failed to connect to DB: %s.", err.Error())
+	//}
 
-	fmt.Fprint(w, menu.ID)
+	fmt.Fprint(w, "test")
 }
 
 func main() {
